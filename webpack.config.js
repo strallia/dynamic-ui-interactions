@@ -6,7 +6,7 @@ module.exports = {
     static: './src',
   },
   devtool: 'inline-source-map',
-  entry: './src/index.js',
+  entry: './src/drop-down-menu/index.js',
   mode: 'development',
   module: {
     rules: [
@@ -31,7 +31,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/drop-down-menu/index.html',
       favicon: '',
     }),
   ],
