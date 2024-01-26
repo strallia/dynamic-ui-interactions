@@ -1,20 +1,5 @@
-# Project
+# Dynamic User Interface Interactions
 
 # Purpose
 
-# Template Features
-
-- npm & configs
-- Webpack & configs
-- ESLint
-- Prettier
-
-# Customize Template
-
-## package.json
-
-- "name" property
-
-## wepack.config.js
-
-- favicon path
+Practice making dynamic drop-down menus, mobile menus, and image sliders with CSS transitions reusable JavaScript code.
