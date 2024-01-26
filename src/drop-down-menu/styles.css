@@ -19,20 +19,35 @@ nav {
 nav > ul,
 .drop-downs.container {
   display: grid;
-  grid-template-columns: repeat(6, minmax(110px, 150px));
-  gap: 20px;
+  grid-template-columns: repeat(6, minmax(140px, 170px));
   justify-content: center;
 }
 
 nav > ul {
-  grid-template-rows: 70px;
   list-style: none;
   align-items: center;
 }
 
-nav > ul > li {
+nav > ul li {
   padding: 0 20px;
   white-space: nowrap;
+  padding: 20px;
+  transform: skew(-15deg) translate(8px);
+}
+
+nav > ul li:hover {
+  background-color: goldenrod;
+  color: navy;
+}
+
+nav > ul a {
+  transform: skew(15deg);
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .absolute-parent {
@@ -44,8 +59,6 @@ nav > ul > li {
   position: absolute;
   width: 100%;
   bottom: 0;
-
-  opacity: 30%;
   z-index: -1;
   transition: transform 500ms ease-in-out;
 }
@@ -55,9 +68,14 @@ nav > ul > li {
   font-size: 12px;
   font-weight: normal;
   color: navy;
-  padding: 20px;
-  display: grid;
-  gap: 20px;
+}
+
+.drop-down li {
+  padding: 10px 20px;
+}
+
+.drop-down li:hover {
+  background-color: gold;
 }
 
 nav:hover {
