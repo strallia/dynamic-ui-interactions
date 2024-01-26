@@ -1,7 +1,9 @@
 import './styles.css';
 
-const colorTitle = function colorTitleBackground(titleNode) {
-  const titles = document.querySelectorAll('nav > ul li');
+const nav = document.querySelector('nav');
+
+const colorTitleOnTitleHover = (titleNode) => {
+  const titles = nav.querySelectorAll('nav > ul li');
   titles.forEach((title) => {
     title.classList.remove('color-title');
   });
@@ -9,21 +11,53 @@ const colorTitle = function colorTitleBackground(titleNode) {
   titleNode.classList.add('color-title');
 };
 
-const colorDropDown = function colorTitleDropDown(title) {
-  const dropDowns = document.querySelectorAll('.drop-down');
+const colorDropDownOnTitleHover = (titleNode) => {
+  const dropDowns = nav.querySelectorAll('.drop-down');
   dropDowns.forEach((dropDown) => {
     dropDown.classList.remove('color-column');
   });
 
-  const titleValue = title.getAttribute('data-value');
-  const coloredDropDown = document.querySelector(`.drop-down.${titleValue}`);
+  const titleValue = titleNode.getAttribute('data-title');
+  const coloredDropDown = nav.querySelector(
+    `.drop-down[data-title="${titleValue}"]`,
+  );
   coloredDropDown.classList.add('color-column');
 };
 
-const navTitles = document.querySelectorAll('nav > ul li');
+const navTitles = nav.querySelectorAll('nav > ul li');
 navTitles.forEach((title) => {
   title.addEventListener('mouseover', (e) => {
-    colorTitle(e.target);
-    colorDropDown(e.target);
+    colorTitleOnTitleHover(e.target);
+    colorDropDownOnTitleHover(e.target);
+  });
+});
+
+const colorTitleOnDropDownHover = (dropDownNode) => {
+  const titles = nav.querySelectorAll('nav > ul li');
+  titles.forEach((title) => {
+    title.classList.remove('color-title');
+  });
+
+  const titleValue = dropDownNode.getAttribute('data-title');
+  const titleNode = nav.querySelector(
+    `nav > ul li[data-title="${titleValue}"]`,
+  );
+  titleNode.classList.add('color-title');
+};
+
+const colorDropDownOnDropDownHover = (dropDownNode) => {
+  const dropDowns = nav.querySelectorAll('.drop-down');
+  dropDowns.forEach((dropDown) => {
+    dropDown.classList.remove('color-column');
+  });
+
+  dropDownNode.classList.add('color-column');
+};
+
+const dropDownListItems = nav.querySelectorAll('.drop-down li');
+dropDownListItems.forEach((item) => {
+  item.addEventListener('mouseover', (e) => {
+    colorTitleOnDropDownHover(e.target.parentNode);
+    colorDropDownOnDropDownHover(e.target.parentNode);
   });
 });

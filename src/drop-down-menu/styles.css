@@ -42,13 +42,13 @@ nav > ul li:hover {
 
 nav > ul a {
   transform: skew(15deg);
-  pointer-events: none;
 }
 
 nav a {
   display: block;
   text-decoration: none;
   color: inherit;
+  pointer-events: none;
 }
 
 .absolute-parent {
@@ -86,7 +86,7 @@ nav:hover {
 }
 
 .color-column {
-  background-color: palegoldenrod;
+  background-color: rgb(245, 240, 209);
 }
 
 .color-title {
