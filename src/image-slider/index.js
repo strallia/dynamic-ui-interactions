@@ -27,5 +27,12 @@ const createImage = (imgObj) => {
   img.setAttribute('data-id', imgObj.id);
   slidesContainer.appendChild(img);
 };
-
 imgs.forEach(createImage);
+
+const moveSlidesContainer = (index) => {
+  slidesContainer.setAttribute(
+    'style',
+    `transform: translate(-${index * 500}px);`,
+  );
+};
+moveSlidesContainer(1);
