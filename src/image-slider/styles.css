@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px solid red;
 }
 
 body {
@@ -16,7 +15,8 @@ body {
 .frame {
   height: 400px;
   width: 500px;
-  overflow: hidden;
+  /* overflow: hidden; */
+  outline: 1px solid blue;
 }
 
 .slides {

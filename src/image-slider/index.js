@@ -1,11 +1,31 @@
 import './styles.css';
 import Hills from './images/hills.jpg';
+import Ocean from './images/ocean.jpg';
+import Glacier from './images/glacier.jpg';
 
 const frame = document.querySelector('.frame');
 const slidesContainer = frame.querySelector('.slides');
 
-const imgs = slidesContainer.querySelectorAll('img');
+const imgs = [
+  {
+    id: 'hills',
+    src: Hills,
+  },
+  {
+    id: 'ocean',
+    src: Ocean,
+  },
+  {
+    id: 'glacier',
+    src: Glacier,
+  },
+];
 
-imgs.forEach((img) => {
-  img.setAttribute('src', Hills);
-});
+const createImage = (imgObj) => {
+  const img = document.createElement('img');
+  img.src = imgObj.src;
+  img.setAttribute('data-id', imgObj.id);
+  slidesContainer.appendChild(img);
+};
+
+imgs.forEach(createImage);
