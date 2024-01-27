@@ -5,18 +5,9 @@ import Chat from './icons/chat.png';
 import Clock from './icons/clock.png';
 
 const container = document.querySelector('.container');
-
 const addButtonView = container.querySelector('.add-button-view');
 const addButton = addButtonView.querySelector('button.large');
 const menuView = container.querySelector('.menu-view');
-const toggleViews = () => {
-  addButton.classList.toggle('shrink');
-  setTimeout(() => {
-    addButtonView.classList.toggle('hidden');
-    menuView.classList.toggle('hidden');
-  }, '500');
-};
-addButtonView.addEventListener('click', toggleViews);
 
 const menuItems = [
   {
@@ -57,11 +48,44 @@ const createTabNode = (item) => {
 
   titlePara.textContent = item.title;
 
-  btn.addEventListener('click', toggleViews);
-
   btn.appendChild(icon);
   appendChildren(tabDiv, [titlePara, btn]);
   menuView.appendChild(tabDiv);
 };
 
 menuItems.forEach(createTabNode);
+
+const menuBtns = menuView.querySelectorAll('.menu-view button');
+const menuTitles = menuView.querySelectorAll('.menu-view p');
+
+const closeAddButtonView = () => {
+  addButton.classList.toggle('shrink');
+  setTimeout(() => {
+    addButtonView.classList.toggle('hidden');
+    menuView.classList.toggle('hidden');
+  }, '500');
+};
+addButtonView.addEventListener('click', closeAddButtonView);
+
+const closeMenuView = () => {
+  menuBtns.forEach((btn) => {
+    btn.classList.add('shrink');
+  });
+  menuTitles.forEach((title) => {
+    title.classList.add('shrink');
+  });
+  setTimeout(() => {
+    addButtonView.classList.toggle('hidden');
+    menuView.classList.toggle('hidden');
+    addButton.classList.toggle('shrink');
+    menuBtns.forEach((btn) => {
+      btn.classList.remove('shrink');
+    });
+    menuTitles.forEach((title) => {
+      title.classList.remove('shrink');
+    });
+  }, '500');
+};
+menuBtns.forEach((btn) => {
+  btn.addEventListener('click', closeMenuView);
+});
