@@ -5,11 +5,14 @@ const nav = document.querySelector('nav');
 
 const hideNavTabs = () => {
   const navTabs = nav.querySelector('nav > ul');
+  const dropDownsContainer = nav.querySelector('.absolute-parent');
   if (document.body.clientWidth < 850) {
     navTabs.classList.add('hidden');
+    dropDownsContainer.classList.add('hidden');
   }
   if (document.body.clientWidth > 850) {
     navTabs.classList.remove('hidden');
+    dropDownsContainer.classList.remove('hidden');
   }
 };
 
