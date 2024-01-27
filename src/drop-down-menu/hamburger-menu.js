@@ -20,6 +20,6 @@ const hideHamburgerMenuIcon = () => {
   }
 };
 
-if (document.body.clientWidth < 850) hideHamburgerMenuIcon();
+if (document.body.clientWidth > 850) hideHamburgerMenuIcon();
 
 window.addEventListener('resize', hideHamburgerMenuIcon);
