@@ -56,4 +56,4 @@ dropDownListItems.forEach((item) => {
   });
 });
 
-// TODO: remove title background colors when hover out of nav
+nav.addEventListener('mouseout', resetNavBackground);
