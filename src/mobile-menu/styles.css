@@ -29,6 +29,7 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 500ms ease-in-out;
 }
 
 button.large {
@@ -69,4 +70,12 @@ button.small {
 button img {
   width: 50%;
   filter: invert(1);
+}
+
+.shrink {
+  transform: scale(0);
+}
+
+.expand {
+  transform: scale(1);
 }

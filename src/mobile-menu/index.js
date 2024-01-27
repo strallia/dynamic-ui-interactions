@@ -7,10 +7,14 @@ import Clock from './icons/clock.png';
 const container = document.querySelector('.container');
 
 const addButtonView = container.querySelector('.add-button-view');
+const addButton = addButtonView.querySelector('button.large');
 const menuView = container.querySelector('.menu-view');
 const toggleViews = () => {
-  addButtonView.classList.toggle('hidden');
-  menuView.classList.toggle('hidden');
+  addButton.classList.toggle('shrink');
+  setTimeout(() => {
+    addButtonView.classList.toggle('hidden');
+    menuView.classList.toggle('hidden');
+  }, '500');
 };
 addButtonView.addEventListener('click', toggleViews);
 
