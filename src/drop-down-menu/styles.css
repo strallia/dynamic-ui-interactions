@@ -130,13 +130,16 @@ nav:hover {
   font-size: 20px;
   background-color: white;
   display: grid;
-  grid-template-columns: min-content;
   gap: 3px;
   transition: transform 500ms ease-in-out;
 }
 
 .hamburger-menu .drop-down li {
   background-color: lightsteelblue;
+}
+
+.hamburger-menu .drop-down li a {
+  padding: 10px 50px 10px 20px;
 }
 
 .hamburger-menu .drop-down.visible {

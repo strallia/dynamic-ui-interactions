@@ -14,9 +14,11 @@ const dropDown = hamburgerMenuContainer.querySelector('.drop-down');
 const hideHamburgerMenu = () => {
   if (document.body.clientWidth < 850) {
     menuIcon.classList.remove('hidden');
+    dropDown.classList.remove('hidden');
   }
   if (document.body.clientWidth > 850) {
     menuIcon.classList.add('hidden');
+    dropDown.classList.add('hidden');
   }
 };
 
