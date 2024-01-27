@@ -5,7 +5,7 @@ const nav = document.querySelector('nav');
 
 const hideNavTabs = () => {
   const navTabs = nav.querySelector('nav > ul');
-  const dropDownsContainer = nav.querySelector('.absolute-parent');
+  const dropDownsContainer = nav.querySelector('nav > .absolute-parent');
   if (document.body.clientWidth < 850) {
     navTabs.classList.add('hidden');
     dropDownsContainer.classList.add('hidden');
@@ -65,7 +65,7 @@ const colorDropDownOnDropDownHover = (dropDownNode) => {
   dropDownNode.classList.add('color-column');
 };
 
-const dropDownListItems = nav.querySelectorAll('.drop-down li');
+const dropDownListItems = nav.querySelectorAll('.drop-down.tabs li');
 dropDownListItems.forEach((item) => {
   item.addEventListener('mouseover', (e) => {
     resetNavBackground();

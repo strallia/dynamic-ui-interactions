@@ -8,10 +8,9 @@ const hamburgerMenuContainer = document.querySelector('.hamburger-menu');
   hamburgerMenuContainer.appendChild(img);
 })();
 
+const menuIcon = hamburgerMenuContainer.querySelector('.hamburger-menu > img');
+
 const hideHamburgerMenuIcon = () => {
-  const menuIcon = hamburgerMenuContainer.querySelector(
-    '.hamburger-menu > img',
-  );
   if (document.body.clientWidth < 850) {
     menuIcon.classList.remove('hidden');
   }
@@ -23,3 +22,10 @@ const hideHamburgerMenuIcon = () => {
 if (document.body.clientWidth > 850) hideHamburgerMenuIcon();
 
 window.addEventListener('resize', hideHamburgerMenuIcon);
+
+const showMenuDropdown = () => {
+  const dropDown = hamburgerMenuContainer.querySelector('.drop-down');
+  dropDown.classList.toggle('visible');
+};
+
+menuIcon.addEventListener('click', showMenuDropdown);

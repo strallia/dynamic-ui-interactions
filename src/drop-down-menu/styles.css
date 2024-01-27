@@ -100,9 +100,11 @@ nav:hover {
 }
 
 .hamburger-menu.container {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: relative;
+  border: 1px solid red;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .hidden {
@@ -113,4 +115,31 @@ nav:hover {
   width: 40px;
   height: 40px;
   filter: invert(1);
+  margin-left: 10px;
+}
+
+.hamburger-menu.container img:hover {
+  cursor: pointer;
+}
+
+.hamburger-menu .drop-down {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  color: navy;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: min-content;
+  gap: 3px;
+  transition: transform 500ms ease-in-out;
+}
+
+.hamburger-menu .drop-down li {
+  background-color: lightsteelblue;
+}
+
+.hamburger-menu .drop-down.visible {
+  transform: translate(0, 100%);
 }
