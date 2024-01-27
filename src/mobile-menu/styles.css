@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 .container {
@@ -14,7 +14,11 @@
   padding: 10px;
 }
 
-.add-button-view {
+.menu-view {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
 button {
@@ -24,6 +28,7 @@ button {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   color: white;
   font-weight: bold;
+  cursor: pointer;
 }
 
 button.large {
@@ -36,6 +41,9 @@ button.small {
   width: 35px;
   height: 35px;
   font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hidden {
@@ -44,7 +52,7 @@ button.small {
 
 .tab {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
 }
 
@@ -55,8 +63,10 @@ button.small {
   font-weight: bold;
   border-radius: 5px;
   box-shadow: 2px 2px rgb(169, 169, 169);
+  pointer-events: none;
 }
 
-.tab button::before {
-  content: url('./icons/paper-clip.png');
+button img {
+  width: 50%;
+  filter: invert(1);
 }
