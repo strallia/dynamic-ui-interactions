@@ -65,7 +65,7 @@ const colorDropDownOnDropDownHover = (dropDownNode) => {
   dropDownNode.classList.add('color-column');
 };
 
-const dropDownListItems = nav.querySelectorAll('.drop-down.tabs li');
+const dropDownListItems = nav.querySelectorAll('.drop-down.tab li');
 dropDownListItems.forEach((item) => {
   item.addEventListener('mouseover', (e) => {
     resetNavBackground();

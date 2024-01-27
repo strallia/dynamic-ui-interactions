@@ -19,6 +19,7 @@ const hideHamburgerMenu = () => {
   if (document.body.clientWidth > 850) {
     menuIcon.classList.add('hidden');
     dropDown.classList.add('hidden');
+    dropDown.classList.remove('visible');
   }
 };
 

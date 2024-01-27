@@ -106,10 +106,6 @@ nav:hover {
   align-items: center;
 }
 
-.hidden {
-  display: none;
-}
-
 .hamburger-menu.container img {
   width: 40px;
   height: 40px;
@@ -144,4 +140,8 @@ nav:hover {
 
 .hamburger-menu .drop-down.visible {
   transform: translate(0, 100%);
+}
+
+.hidden {
+  display: none !important;
 }
