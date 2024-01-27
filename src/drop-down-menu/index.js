@@ -1,4 +1,5 @@
 import './styles.css';
+import './hamburger-menu';
 
 const nav = document.querySelector('nav');
 
@@ -57,3 +58,11 @@ dropDownListItems.forEach((item) => {
 });
 
 nav.addEventListener('mouseout', resetNavBackground);
+
+const hideNavTabs = (e) => {
+  if (document.body.clientWidth < 850) {
+    // TODO: hide nav tabs
+  }
+};
+
+window.addEventListener('resize', hideNavTabs);
