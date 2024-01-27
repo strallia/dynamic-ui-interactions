@@ -3,7 +3,7 @@ import './hamburger-menu';
 
 const nav = document.querySelector('nav');
 
-const hideNavTabs = (e) => {
+const hideNavTabs = () => {
   const navTabs = nav.querySelector('nav > ul');
   if (document.body.clientWidth < 850) {
     navTabs.classList.add('hidden');
