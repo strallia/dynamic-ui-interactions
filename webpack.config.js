@@ -6,7 +6,7 @@ module.exports = {
     static: './src',
   },
   devtool: 'inline-source-map',
-  entry: './src/mobile-menu/action-button.js',
+  entry: './src/mobile-menu/index.js',
   mode: 'development',
   module: {
     rules: [
