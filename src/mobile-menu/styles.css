@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  outline: 1px solid red;
+}
+
+.container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.add-button-view {
+}
+
+button {
+  background-color: green;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-weight: bold;
+}
+
+button.large {
+  width: 50px;
+  height: 50px;
+  font-size: 2.5em;
+}
+
+button.small {
+  width: 35px;
+  height: 35px;
+  font-size: 2em;
+}
+
+.hidden {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.tab p {
+  background-color: lightgray;
+  font-size: 1em;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 2px 2px rgb(169, 169, 169);
+}
+
+.tab button::before {
+  content: url('./icons/paper-clip.png');
+}
