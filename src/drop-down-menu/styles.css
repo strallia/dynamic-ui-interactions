@@ -28,27 +28,24 @@ nav > ul {
   align-items: center;
 }
 
-nav > ul li {
-  padding: 0 20px;
+nav > ul a {
   white-space: nowrap;
-  padding: 20px;
   transform: skew(-15deg) translate(8px);
 }
 
-nav > ul li:hover {
-  background-color: goldenrod;
-  color: navy;
+nav > ul a {
+  padding: 20px;
 }
 
-nav > ul a {
-  transform: skew(15deg);
+nav > ul a:hover {
+  background-color: goldenrod;
+  color: navy;
 }
 
 nav a {
   display: block;
   text-decoration: none;
   color: inherit;
-  pointer-events: none;
 }
 
 .absolute-parent {
@@ -71,11 +68,11 @@ nav a {
   color: navy;
 }
 
-.drop-down li {
+.drop-down a {
   padding: 10px 20px;
 }
 
-.drop-down li:hover {
+.drop-down a:hover {
   background-color: gold;
 }
 

@@ -3,9 +3,9 @@ import './styles.css';
 const nav = document.querySelector('nav');
 
 const resetNavBackground = () => {
-  const titles = nav.querySelectorAll('nav > ul li');
-  titles.forEach((title) => {
-    title.classList.remove('color-title');
+  const titleLinks = nav.querySelectorAll('nav > ul a');
+  titleLinks.forEach((link) => {
+    link.classList.remove('color-title');
   });
 
   const dropDowns = nav.querySelectorAll('.drop-down');
@@ -14,23 +14,23 @@ const resetNavBackground = () => {
   });
 };
 
-const colorTitleOnTitleHover = (titleNode) => {
-  titleNode.classList.add('color-title');
+const colorTitleLinkOnTitleHover = (linkNode) => {
+  linkNode.classList.add('color-title');
 };
 
-const colorDropDownOnTitleHover = (titleNode) => {
-  const titleValue = titleNode.getAttribute('data-title');
+const colorDropDownOnTitleHover = (linkNode) => {
+  const titleValue = linkNode.parentNode.getAttribute('data-title');
   const coloredDropDown = nav.querySelector(
     `.drop-down[data-title="${titleValue}"]`,
   );
   coloredDropDown.classList.add('color-column');
 };
 
-const navTitles = nav.querySelectorAll('nav > ul li');
-navTitles.forEach((title) => {
-  title.addEventListener('mouseover', (e) => {
+const navTitleLinks = nav.querySelectorAll('nav > ul a');
+navTitleLinks.forEach((link) => {
+  link.addEventListener('mouseover', (e) => {
     resetNavBackground();
-    colorTitleOnTitleHover(e.target);
+    colorTitleLinkOnTitleHover(e.target);
     colorDropDownOnTitleHover(e.target);
   });
 });
@@ -38,7 +38,7 @@ navTitles.forEach((title) => {
 const colorTitleOnDropDownHover = (dropDownNode) => {
   const titleValue = dropDownNode.getAttribute('data-title');
   const titleNode = nav.querySelector(
-    `nav > ul li[data-title="${titleValue}"]`,
+    `nav > ul li[data-title="${titleValue}"] a`,
   );
   titleNode.classList.add('color-title');
 };
@@ -51,10 +51,9 @@ const dropDownListItems = nav.querySelectorAll('.drop-down li');
 dropDownListItems.forEach((item) => {
   item.addEventListener('mouseover', (e) => {
     resetNavBackground();
-    colorTitleOnDropDownHover(e.target.parentNode);
-    colorDropDownOnDropDownHover(e.target.parentNode);
+    colorTitleOnDropDownHover(e.target.parentNode.parentNode);
+    colorDropDownOnDropDownHover(e.target.parentNode.parentNode);
   });
 });
 
-// TODO: make links clickable but not in the way of hover pointer events
 // TODO: remove title background colors when hover out of nav
