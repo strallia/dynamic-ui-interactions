@@ -3,6 +3,20 @@ import './hamburger-menu';
 
 const nav = document.querySelector('nav');
 
+const hideNavTabs = (e) => {
+  const navTabs = nav.querySelector('nav > ul');
+  if (document.body.clientWidth < 850) {
+    navTabs.classList.add('hidden');
+  }
+  if (document.body.clientWidth > 850) {
+    navTabs.classList.remove('hidden');
+  }
+};
+
+if (document.body.clientWidth < 850) hideNavTabs();
+
+window.addEventListener('resize', hideNavTabs);
+
 const resetNavBackground = () => {
   const titleLinks = nav.querySelectorAll('nav > ul a');
   titleLinks.forEach((link) => {
@@ -58,11 +72,3 @@ dropDownListItems.forEach((item) => {
 });
 
 nav.addEventListener('mouseout', resetNavBackground);
-
-const hideNavTabs = (e) => {
-  if (document.body.clientWidth < 850) {
-    // TODO: hide nav tabs
-  }
-};
-
-window.addEventListener('resize', hideNavTabs);
