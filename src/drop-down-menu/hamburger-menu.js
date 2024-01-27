@@ -9,8 +9,9 @@ const hamburgerMenuContainer = document.querySelector('.hamburger-menu');
 })();
 
 const menuIcon = hamburgerMenuContainer.querySelector('.hamburger-menu > img');
+const dropDown = hamburgerMenuContainer.querySelector('.drop-down');
 
-const hideHamburgerMenuIcon = () => {
+const hideHamburgerMenu = () => {
   if (document.body.clientWidth < 850) {
     menuIcon.classList.remove('hidden');
   }
@@ -19,12 +20,11 @@ const hideHamburgerMenuIcon = () => {
   }
 };
 
-if (document.body.clientWidth > 850) hideHamburgerMenuIcon();
+if (document.body.clientWidth > 850) hideHamburgerMenu();
 
-window.addEventListener('resize', hideHamburgerMenuIcon);
+window.addEventListener('resize', hideHamburgerMenu);
 
 const showMenuDropdown = () => {
-  const dropDown = hamburgerMenuContainer.querySelector('.drop-down');
   dropDown.classList.toggle('visible');
 };
 
