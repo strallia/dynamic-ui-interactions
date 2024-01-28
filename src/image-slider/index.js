@@ -70,3 +70,26 @@ const createDot = (imgObj) => {
   dotsContainer.appendChild(dot);
 };
 imgs.forEach(createDot);
+
+const dots = dotsContainer.querySelectorAll('.dot');
+
+let activeDot = dots[0];
+const fillActiveDot = () => {
+  dots.forEach((dot) => {
+    dot.classList.remove('filled');
+  });
+  activeDot.classList.add('filled');
+};
+fillActiveDot();
+
+const handleDotClick = (e) => {
+  const id = e.target.getAttribute('data-id');
+  const clickedImgIndex = imgs.map((obj) => obj.id).indexOf(id);
+  activeImg = imgs[clickedImgIndex];
+  showActiveImg();
+  activeDot = e.target;
+  fillActiveDot();
+};
+dots.forEach((dot) => {
+  dot.addEventListener('click', handleDotClick);
+});
