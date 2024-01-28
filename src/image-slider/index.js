@@ -22,8 +22,6 @@ const imgs = [
   },
 ];
 
-let activeImg = imgs[0];
-
 const createImage = (imgObj) => {
   const img = document.createElement('img');
   img.src = imgObj.src;
@@ -32,6 +30,7 @@ const createImage = (imgObj) => {
 };
 imgs.forEach(createImage);
 
+let activeImg = imgs[0];
 const showActiveImg = () => {
   const imgIndex = imgs.indexOf(activeImg);
   slidesContainer.setAttribute(
