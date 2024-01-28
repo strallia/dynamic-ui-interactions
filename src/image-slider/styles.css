@@ -9,10 +9,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: grey;
+  background-color: rgb(65, 65, 65);
 }
 
-.gallery-container {
+.gallery {
   display: flex;
   width: 100%;
   justify-content: center;
@@ -34,7 +34,7 @@ body {
 }
 
 img {
-  min-width: 100%;
+  min-width: 500px;
 }
 
 button {
