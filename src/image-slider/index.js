@@ -36,3 +36,5 @@ const moveSlidesContainer = (index) => {
   );
 };
 moveSlidesContainer(1);
+
+// TODO: create arrows
