@@ -100,3 +100,5 @@ const handleBackClick = () => {
   setActiveDot(activeImg.id);
 };
 backArrow.addEventListener('click', handleBackClick);
+
+setInterval(handleNextClick, 5000);
