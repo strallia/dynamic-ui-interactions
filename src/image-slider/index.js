@@ -40,6 +40,43 @@ const showActiveImg = () => {
 };
 showActiveImg();
 
+const dotsContainer = gallery.querySelector('.dots-container');
+const createDot = (imgObj) => {
+  const dot = document.createElement('button');
+  dot.classList.add('dot');
+  dot.setAttribute('data-id', imgObj.id);
+  dotsContainer.appendChild(dot);
+};
+imgs.forEach(createDot);
+
+const dots = dotsContainer.querySelectorAll('.dot');
+let activeDot = dots[0];
+
+const fillActiveDot = () => {
+  dots.forEach((dot) => {
+    dot.classList.remove('filled');
+  });
+  activeDot.classList.add('filled');
+};
+fillActiveDot();
+
+const setActiveDot = (id) => {
+  const activeDotNode = dotsContainer.querySelector(`[data-id=${id}`);
+  activeDot = activeDotNode;
+  fillActiveDot();
+};
+
+const handleDotClick = (e) => {
+  const id = e.target.getAttribute('data-id');
+  const clickedImgIndex = imgs.map((obj) => obj.id).indexOf(id);
+  activeImg = imgs[clickedImgIndex];
+  showActiveImg();
+  setActiveDot(id);
+};
+dots.forEach((dot) => {
+  dot.addEventListener('click', handleDotClick);
+});
+
 const nextArrow = gallery.querySelector('.next');
 const handleNextClick = () => {
   const currentImgIndex = imgs.indexOf(activeImg);
@@ -47,6 +84,7 @@ const handleNextClick = () => {
   if (imgs.length === nextImgIndex) nextImgIndex = 0;
   activeImg = imgs[nextImgIndex];
   showActiveImg();
+  setActiveDot(activeImg.id);
 };
 nextArrow.addEventListener('click', handleNextClick);
 
@@ -59,37 +97,6 @@ const handleBackClick = () => {
   }
   activeImg = imgs[prevImgIndex];
   showActiveImg();
+  setActiveDot(activeImg.id);
 };
 backArrow.addEventListener('click', handleBackClick);
-
-const dotsContainer = gallery.querySelector('.dots-container');
-const createDot = (imgObj) => {
-  const dot = document.createElement('button');
-  dot.classList.add('dot');
-  dot.setAttribute('data-id', imgObj.id);
-  dotsContainer.appendChild(dot);
-};
-imgs.forEach(createDot);
-
-const dots = dotsContainer.querySelectorAll('.dot');
-
-let activeDot = dots[0];
-const fillActiveDot = () => {
-  dots.forEach((dot) => {
-    dot.classList.remove('filled');
-  });
-  activeDot.classList.add('filled');
-};
-fillActiveDot();
-
-const handleDotClick = (e) => {
-  const id = e.target.getAttribute('data-id');
-  const clickedImgIndex = imgs.map((obj) => obj.id).indexOf(id);
-  activeImg = imgs[clickedImgIndex];
-  showActiveImg();
-  activeDot = e.target;
-  fillActiveDot();
-};
-dots.forEach((dot) => {
-  dot.addEventListener('click', handleDotClick);
-});
