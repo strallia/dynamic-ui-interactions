@@ -13,10 +13,12 @@ body {
 }
 
 .gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   width: 100%;
   justify-content: center;
-  gap: 50px;
+  column-gap: 50px;
+  row-gap: 30px;
   align-items: center;
 }
 
@@ -39,19 +41,20 @@ img {
 }
 
 button {
-  background: transparent;
+  background-color: transparent;
   border: none;
   color: white;
   font-weight: bold;
   font-size: 30px;
-  filter: invert(1);
   cursor: pointer;
   height: fit-content;
 }
 
-button::before {
+button.back::before,
+button.next::before {
   content: url('./images/arrow.png');
   zoom: 0.1;
+  filter: invert(1);
 }
 
 button:active {
@@ -61,4 +64,26 @@ button:active {
 button.back::before {
   display: block;
   transform: rotate(180deg);
+}
+
+.dots-container {
+  width: 100%;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-content);
+  grid-auto-flow: column;
+  gap: 10px;
+  justify-content: center;
+  justify-items: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  border: 1px solid white;
+}
+
+.dot.filled {
+  background-color: white;
 }

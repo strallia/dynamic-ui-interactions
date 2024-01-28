@@ -30,6 +30,15 @@ const createImage = (imgObj) => {
 };
 imgs.forEach(createImage);
 
+const dotsContainer = gallery.querySelector('.dots-container');
+const createDot = (imgObj) => {
+  const dot = document.createElement('button');
+  dot.classList.add('dot');
+  dot.setAttribute('data-id', imgObj.id);
+  dotsContainer.appendChild(dot);
+};
+imgs.forEach(createDot);
+
 let activeImg = imgs[0];
 const showActiveImg = () => {
   const imgIndex = imgs.indexOf(activeImg);
